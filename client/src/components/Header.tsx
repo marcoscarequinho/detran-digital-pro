@@ -29,17 +29,17 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-sm shadow-soft">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+      <div className="container mx-auto px-2 sm:px-4">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-2 md:space-x-3">
-            <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
-              <span className="text-primary-foreground font-bold text-lg md:text-xl">D</span>
+          <div className="flex items-center space-x-1.5 sm:space-x-2 md:space-x-3 flex-1 min-w-0 mr-2">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
+              <span className="text-primary-foreground font-bold text-base sm:text-lg md:text-xl">D</span>
             </div>
-            <div className="min-w-0">
-              <h1 className="font-bold text-base md:text-xl text-primary truncate">DETRAN Digital</h1>
-              <p className="text-xs md:text-sm text-muted-foreground truncate">Despachante Marcos Carequinho</p>
-              <p className="text-[10px] md:text-xs text-muted-foreground/80 hidden sm:block">Credenciado DETRAN RJ • ES • MG • SP</p>
+            <div className="min-w-0 flex-1">
+              <h1 className="font-bold text-sm sm:text-base md:text-xl text-primary truncate">DETRAN Digital</h1>
+              <p className="text-[10px] sm:text-xs md:text-sm text-muted-foreground truncate">M. Carequinho</p>
+              <p className="text-[9px] sm:text-[10px] md:text-xs text-muted-foreground/80 hidden md:block truncate">Credenciado DETRAN</p>
             </div>
           </div>
 
@@ -94,11 +94,11 @@ const Header = () => {
           {/* Mobile Menu */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="sm" className="lg:hidden">
-                <Menu className="w-6 h-6" />
+              <Button variant="ghost" size="sm" className="lg:hidden p-1 sm:p-2">
+                <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-80">
+            <SheetContent side="right" className="w-[280px] sm:w-80">
               <div className="flex flex-col space-y-6 mt-6">
                 <div className="text-center">
                   <h2 className="font-bold text-xl text-primary">DETRAN Digital</h2>

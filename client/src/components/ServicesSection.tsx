@@ -83,19 +83,19 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="servicos" className="py-12 md:py-20 bg-gradient-subtle">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-8 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-primary">
+    <section id="servicos" className="py-8 sm:py-12 md:py-20 bg-gradient-subtle">
+      <div className="container mx-auto px-3 sm:px-4">
+        <div className="text-center mb-6 sm:mb-8 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 text-primary">
             Nossos Serviços
           </h2>
-          <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-sm sm:text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
             Oferecemos soluções completas em documentação veicular com processos 100% digitais
             para sua comodidade e agilidade.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-8">
           {services.map((service, index) => (
             <Card
               key={index}
@@ -104,53 +104,53 @@ const ServicesSection = () => {
               }`}
             >
               {service.popular && (
-                <div className="absolute -top-3 md:-top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-gradient-primary text-primary-foreground px-3 md:px-4 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-semibold shadow-soft">
+                <div className="absolute -top-2 sm:-top-3 md:-top-4 left-1/2 transform -translate-x-1/2">
+                  <span className="bg-gradient-primary text-primary-foreground px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 rounded-full text-[10px] sm:text-xs md:text-sm font-semibold shadow-soft">
                     Mais Popular
                   </span>
                 </div>
               )}
 
-              <CardHeader className="text-center pb-3 md:pb-4 pt-4 md:pt-6">
-                <div className={`w-12 h-12 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 rounded-2xl flex items-center justify-center ${
+              <CardHeader className="text-center pb-2 sm:pb-3 md:pb-4 pt-3 sm:pt-4 md:pt-6">
+                <div className={`w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 mx-auto mb-2 sm:mb-3 md:mb-4 rounded-2xl flex items-center justify-center ${
                   service.popular ? 'bg-gradient-primary' : 'bg-primary/10'
                 }`}>
-                  <service.icon className={`w-6 h-6 md:w-8 md:h-8 ${
+                  <service.icon className={`w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 ${
                     service.popular ? 'text-primary-foreground' : 'text-primary'
                   }`} />
                 </div>
 
-                <CardTitle className="text-lg md:text-xl mb-2">{service.title}</CardTitle>
-                <CardDescription className="text-sm md:text-base">
+                <CardTitle className="text-base sm:text-lg md:text-xl mb-1 sm:mb-2">{service.title}</CardTitle>
+                <CardDescription className="text-xs sm:text-sm md:text-base">
                   {service.description}
                 </CardDescription>
               </CardHeader>
 
-              <CardContent className="space-y-4 md:space-y-6">
+              <CardContent className="space-y-3 sm:space-y-4 md:space-y-6">
                 <div className="text-center">
-                  <p className="text-xl md:text-2xl font-bold text-primary whitespace-pre-line">
+                  <p className="text-lg sm:text-xl md:text-2xl font-bold text-primary whitespace-pre-line">
                     {service.price}
                   </p>
                 </div>
 
-                <div className="space-y-2 md:space-y-3">
+                <div className="space-y-1.5 sm:space-y-2 md:space-y-3">
                   {service.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center gap-2 md:gap-3">
-                      <CheckCircle className="w-4 md:w-5 h-4 md:h-5 text-success-green flex-shrink-0" />
-                      <span className="text-xs md:text-sm text-muted-foreground">{feature}</span>
+                    <div key={featureIndex} className="flex items-center gap-1.5 sm:gap-2 md:gap-3">
+                      <CheckCircle className="w-3.5 sm:w-4 md:w-5 h-3.5 sm:h-4 md:h-5 text-success-green flex-shrink-0" />
+                      <span className="text-[11px] sm:text-xs md:text-sm text-muted-foreground">{feature}</span>
                     </div>
                   ))}
                 </div>
 
                 <Button
                   onClick={() => handleWhatsApp(service.title)}
-                  className={`w-full gap-2 text-sm md:text-base ${
+                  className={`w-full gap-1.5 sm:gap-2 text-xs sm:text-sm md:text-base ${
                     service.popular ? 'bg-gradient-primary hover:shadow-medium' : ''
                   }`}
                   variant={service.popular ? "default" : "outline"}
                 >
                   Solicitar Orçamento
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-3.5 sm:w-4 h-3.5 sm:h-4" />
                 </Button>
               </CardContent>
             </Card>
@@ -158,39 +158,39 @@ const ServicesSection = () => {
         </div>
 
 
-        <div className="mt-8 md:mt-16 text-center">
-          <div className="bg-white p-6 md:p-8 rounded-2xl shadow-soft max-w-4xl mx-auto">
-            <h3 className="text-xl md:text-2xl font-bold mb-4 text-primary">
+        <div className="mt-6 sm:mt-8 md:mt-16 text-center">
+          <div className="bg-white p-4 sm:p-6 md:p-8 rounded-2xl shadow-soft max-w-4xl mx-auto">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 text-primary">
               Por que escolher nossos serviços?
             </h3>
 
-            <div className="grid md:grid-cols-3 gap-4 md:gap-6 mt-6 md:mt-8">
+            <div className="grid md:grid-cols-3 gap-3 sm:gap-4 md:gap-6 mt-4 sm:mt-6 md:mt-8">
               <div className="text-center">
-                <div className="w-10 h-10 md:w-12 md:h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-2 md:mb-3">
-                  <CheckCircle className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+                <div className="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-1.5 sm:mb-2 md:mb-3">
+                  <CheckCircle className="w-4.5 sm:w-5 md:w-6 h-4.5 sm:h-5 md:h-6 text-primary" />
                 </div>
-                <h4 className="font-semibold mb-1 md:mb-2 text-sm md:text-base">100% Digital</h4>
-                <p className="text-xs md:text-sm text-muted-foreground">
+                <h4 className="font-semibold mb-0.5 sm:mb-1 md:mb-2 text-xs sm:text-sm md:text-base">100% Digital</h4>
+                <p className="text-[10px] sm:text-xs md:text-sm text-muted-foreground">
                   Processos totalmente online, sem necessidade de deslocamento
                 </p>
               </div>
 
               <div className="text-center">
-                <div className="w-10 h-10 md:w-12 md:h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-2 md:mb-3">
-                  <RotateCcw className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+                <div className="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-1.5 sm:mb-2 md:mb-3">
+                  <RotateCcw className="w-4.5 sm:w-5 md:w-6 h-4.5 sm:h-5 md:h-6 text-primary" />
                 </div>
-                <h4 className="font-semibold mb-1 md:mb-2 text-sm md:text-base">Rapidez</h4>
-                <p className="text-xs md:text-sm text-muted-foreground">
+                <h4 className="font-semibold mb-0.5 sm:mb-1 md:mb-2 text-xs sm:text-sm md:text-base">Rapidez</h4>
+                <p className="text-[10px] sm:text-xs md:text-sm text-muted-foreground">
                   Agilidade nos processos com acompanhamento em tempo real
                 </p>
               </div>
 
               <div className="text-center">
-                <div className="w-10 h-10 md:w-12 md:h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-2 md:mb-3">
-                  <Car className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+                <div className="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-1.5 sm:mb-2 md:mb-3">
+                  <Car className="w-4.5 sm:w-5 md:w-6 h-4.5 sm:h-5 md:h-6 text-primary" />
                 </div>
-                <h4 className="font-semibold mb-1 md:mb-2 text-sm md:text-base">Experiência</h4>
-                <p className="text-xs md:text-sm text-muted-foreground">
+                <h4 className="font-semibold mb-0.5 sm:mb-1 md:mb-2 text-xs sm:text-sm md:text-base">Experiência</h4>
+                <p className="text-[10px] sm:text-xs md:text-sm text-muted-foreground">
                   Anos de experiência em documentação veicular
                 </p>
               </div>

@@ -53,22 +53,22 @@ const FAQSection = () => {
   ];
 
   return (
-    <section id="faq" className="py-12 md:py-20 bg-gradient-subtle">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-8 md:mb-16">
-          <div className="w-12 h-12 md:w-16 md:h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4 md:mb-6">
-            <HelpCircle className="w-6 h-6 md:w-8 md:h-8 text-primary" />
+    <section id="faq" className="py-8 sm:py-12 md:py-20 bg-gradient-subtle">
+      <div className="container mx-auto px-3 sm:px-4">
+        <div className="text-center mb-6 sm:mb-8 md:mb-16">
+          <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 md:mb-6">
+            <HelpCircle className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-primary" />
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-primary">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 text-primary">
             Perguntas Frequentes
           </h2>
-          <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-sm sm:text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
             Esclarecemos as principais dúvidas sobre nossos serviços e processos
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="space-y-3 md:space-y-4">
+          <div className="space-y-2 sm:space-y-3 md:space-y-4">
             {faqs.map((faq, index) => (
               <Card
                 key={index}
@@ -77,24 +77,24 @@ const FAQSection = () => {
                 }`}
               >
                 <CardHeader
-                  className="pb-0 cursor-pointer p-4 md:p-6"
+                  className="pb-0 cursor-pointer p-3 sm:p-4 md:p-6"
                   onClick={() => toggleFAQ(index)}
                 >
                   <CardTitle className="flex items-center justify-between text-left">
-                    <span className="text-sm md:text-lg pr-3 md:pr-4">{faq.question}</span>
+                    <span className="text-xs sm:text-sm md:text-lg pr-2 sm:pr-3 md:pr-4">{faq.question}</span>
                     <div className="flex-shrink-0">
                       {openIndex === index ? (
-                        <ChevronUp className="w-4 h-4 md:w-5 md:h-5 text-primary" />
+                        <ChevronUp className="w-3.5 sm:w-4 md:w-5 h-3.5 sm:h-4 md:h-5 text-primary" />
                       ) : (
-                        <ChevronDown className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground" />
+                        <ChevronDown className="w-3.5 sm:w-4 md:w-5 h-3.5 sm:h-4 md:h-5 text-muted-foreground" />
                       )}
                     </div>
                   </CardTitle>
                 </CardHeader>
 
                 {openIndex === index && (
-                  <CardContent className="pt-3 md:pt-4 px-4 md:px-6">
-                    <p className="text-muted-foreground leading-relaxed whitespace-pre-line text-xs md:text-sm">
+                  <CardContent className="pt-2 sm:pt-3 md:pt-4 px-3 sm:px-4 md:px-6">
+                    <p className="text-muted-foreground leading-relaxed whitespace-pre-line text-[10px] sm:text-xs md:text-sm">
                       {faq.answer}
                     </p>
                   </CardContent>
@@ -103,24 +103,24 @@ const FAQSection = () => {
             ))}
           </div>
 
-          <div className="mt-8 md:mt-12 text-center">
-            <div className="bg-white p-4 md:p-6 rounded-2xl shadow-soft">
-              <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3 text-primary">
+          <div className="mt-6 sm:mt-8 md:mt-12 text-center">
+            <div className="bg-white p-3 sm:p-4 md:p-6 rounded-2xl shadow-soft">
+              <h3 className="text-base sm:text-lg md:text-xl font-bold mb-1.5 sm:mb-2 md:mb-3 text-primary">
                 Não encontrou sua resposta?
               </h3>
-              <p className="text-muted-foreground mb-3 md:mb-4 text-xs md:text-sm">
+              <p className="text-muted-foreground mb-2 sm:mb-3 md:mb-4 text-[10px] sm:text-xs md:text-sm">
                 Entre em contato conosco via WhatsApp e teremos prazer em esclarecer suas dúvidas
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center">
                 <button
                   onClick={() => window.open("https://wa.me/5522992090682", "_blank")}
-                  className="bg-success-green hover:bg-success-green/90 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-medium transition-smooth flex items-center justify-center gap-2 text-sm md:text-base"
+                  className="bg-success-green hover:bg-success-green/90 text-white px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-lg font-medium transition-smooth flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm md:text-base"
                 >
                   Falar no WhatsApp
                 </button>
                 <button
                   onClick={() => window.open("tel:+5522992090682", "_blank")}
-                  className="border border-primary text-primary hover:bg-primary hover:text-primary-foreground px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-medium transition-smooth text-sm md:text-base"
+                  className="border border-primary text-primary hover:bg-primary hover:text-primary-foreground px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-lg font-medium transition-smooth text-xs sm:text-sm md:text-base"
                 >
                   Ligar Agora
                 </button>
