@@ -1,0 +1,4 @@
+project_id = "uwmktanmdliescbsblxl"
+
+[functions.consulta-veiculo]
+verify_jwt = false

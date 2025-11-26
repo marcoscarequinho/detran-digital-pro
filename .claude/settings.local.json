@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git remote add:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(npm install)",
+      "Bash(npm run dev:*)",
+      "Bash(npm install:*)",
+      "Bash(curl:*)",
+      "Bash(taskkill:*)",
+      "Read(c:\\Users\\marco\\OneDrive - Editora e Distribuidora Educacional\\Área de Trabalho/**)",
+      "WebFetch(domain:detran-digital-pro-7xbr.vercel.app)",
+      "Read(c:\\Users\\marco\\OneDrive - Editora e Distribuidora Educacional\\Área de Trabalho/**)",
+      "WebFetch(domain:detran-digital-pro-new.vercel.app)",
+      "Bash(git init:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
